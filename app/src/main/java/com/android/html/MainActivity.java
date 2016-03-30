@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.android.html.js.AndroidJsActivity;
+import com.android.html.openapp.HtmlOpenActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,6 +17,14 @@ public class MainActivity extends AppCompatActivity {
 
 
         findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), HtmlOpenActivity.class));
+            }
+        });
+
+
+        findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), AndroidJsActivity.class));

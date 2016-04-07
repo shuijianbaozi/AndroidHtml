@@ -24,12 +24,15 @@ class JsInterface {
      * @param name
      */
     @JavascriptInterface
-    public void showInfoFromJs(String name) {
-        Toast.makeText(mContext, "来自js的信息:" + name, Toast.LENGTH_SHORT).show();
+    public void showInfoFromJs(String[] name) {
+        Toast.makeText(mContext, "来自js的信息:" + name[0], Toast.LENGTH_SHORT).show();
     }
 
     @JavascriptInterface
-    public void showInfoFromJs(){
+    public String showInfoFromJs() {
         Toast.makeText(mContext, "JS调用App方法", Toast.LENGTH_SHORT).show();
+
+
+        return "abc";
     }
 }

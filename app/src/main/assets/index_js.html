@@ -17,9 +17,11 @@
 <body>
 <p>JS调用Android中的方法</p>
 
-<button onclick="invokeAppMethod()">JS调用App方法(不带参数)</button>
+<button onclick="invokeAppMethod()">JS调用App方法(不带参数),可以得到Android返回的数据</button>
+<button onclick="window.MyJsCallAndroidProtocol.js2Android()">JS调用App方法(不带参数),无法得到Android返回的数据</button>
 <br/><br/>
 <button onclick="sendInfoToJava()">JS调用App方法(带参数)</button>
+
 
 <script>
 		
@@ -27,25 +29,26 @@
 			function sendInfoToJava() {
 				//调用android程序中的方法，并传递参数
 				<!--var name = '我是JS';-->
-				var name=new Array("Saab","Volvo","BMW");
-				window.AndroidWebView.showInfoFromJs(name);
+				var name=new Array("你好,我是老鸡儿啊,Android你在么?","Volvo","BMW");
+				window.MyJsCallAndroidProtocol.js2Android(name);
 			}
 			
-			// 直接调用Android客户端中的showInfoFromJs方法
+			// 调用Android客户端的方法
 			function invokeAppMethod() {
-				var object = window.AndroidWebView.showInfoFromJs();
+				var object = window.MyJsCallAndroidProtocol.js2Android();
+				//显示Android接收到消息后的返回值
 				alert(object);
 			}
 
 
-			//在Android代码中调用此方法
-			function showInfoFromApp(msg) {
+			//在Android代码中调用此方法 这里方法名必须有区别,否则会调用到别处
+			function android2js1(msg) {
 				alert("来自App的信息：" + msg);
 			}
 
 			//在Android代码中调用此方法,不传递信息
-			function showInfoFromApp() {
-				alert("通过App调用JS");
+			function android2js() {
+				alert("App调用js方法");
 			}
 
 </script>

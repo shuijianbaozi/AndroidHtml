@@ -7,7 +7,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context="com.shuijianbaozi.html.MainActivity">
 
 
     <Button
@@ -21,4 +21,9 @@
         android:layout_height="wrap_content"
         android:text="Android和JS互调"
         android:id="@+id/button2" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="测试小嗨h5"
+        android:id="@+id/btnXiaohai" />
 </LinearLayout>

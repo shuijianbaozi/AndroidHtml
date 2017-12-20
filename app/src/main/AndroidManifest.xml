@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.android.html">
+    package="com.shuijianbaozi.html">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="com.shuijianbaozi.html.MainActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,17 +19,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".js.AndroidJsActivity"
+            android:name="com.shuijianbaozi.html.js.AndroidJsActivity"
             android:label="@string/title_activity_android_js" />
-
-        <activity android:name=".openapp.HtmlOpenActivity" />
-
+        <activity android:name="com.shuijianbaozi.html.openapp.HtmlOpenActivity" />
         <activity
-            android:name=".openapp.AppActivityActivity"
+            android:name="com.shuijianbaozi.html.openapp.AppActivityActivity"
             android:label="@string/title_activity_app">
 
-
-            <!--第一种方式:自定义-->
+            <!-- 第一种方式:自定义 -->
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -41,7 +38,7 @@
                     android:scheme="app" />
             </intent-filter>
 
-            <!--第二种方式：以http协议-->
+            <!-- 第二种方式：以http协议 -->
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -53,8 +50,10 @@
                     android:scheme="http" />
             </intent-filter>
 
-            <!-- 2中方式选择一种就可以了-->
+            <!-- 2中方式选择一种就可以了 -->
         </activity>
+        <!--用于小嗨内部测试使用-->
+        <activity android:name="com.shuijianbaozi.html.xiaohai.ContentActivity"/>
     </application>
 
 </manifest>
